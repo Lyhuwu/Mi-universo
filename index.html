@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> <3| Mi universo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="intro-overlay">
+        <div class="scroll-design">
+            <h2 class="typewriter">Dicen que el universo es infinito...</h2>
+            <h2 class="typewriter delay">pero yo encontré su centro en ti.</h2>
+            <div class="scroll-text-body">
+                <p class="intro-subtext">
+                    Cada risa, cada foto y cada momento son estrellas solitarias,<br>
+                    pero juntas, forman la única constelación que importa: <b>Tú</b>.
+                </p>
+            </div>
+            <button id="start-btn">¿Quieres observar como se ve para mi?</button>
+        </div>
+    </div>
+
+    <div id="ui-container">
+        <h1 class="title">⋆˙☆˙⋆</h1>
+    </div>
+
+    <div id="memory-modal" class="hidden">
+        <div class="modal-content">
+            <span id="close-modal">×</span>
+            <div id="memory-body">
+                <img id="memory-img" src="" alt="Recuerdo" class="hidden">
+                <img id="memory-secondary" src="" alt="Animación" class="hidden">
+                <p id="memory-text"></p>
+                <a id="memory-link" href="#" target="_blank" class="music-btn hidden">Escuchar canción 🎵</a>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="bg"></canvas>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

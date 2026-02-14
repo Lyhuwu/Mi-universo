@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Rouge+Script&display=swap');
+
+// ================= VARIABLES =================
+
+// Cake
+$plate-width: 250px;
+$plate-height: 75px;
+$plate-padding: 20px;
+
+$base-width: $plate-width - $plate-padding - 30px;
+$base-height: 50px;
+$base-top-height: $plate-height - 10px;
+
+// 🎨 Paleta azul
+$base-bg: #5a8fd8;
+$cream-bg: #87bfff;
+
+// Candle
+$candle-width: 15px;
+$candle-height: 75px;
+$flame-height: 30px;
+$star-size: 15px;
+
+$candle-bg: repeating-linear-gradient(45deg, #eee, #6da9f7 20%);
+$candle-top-bg: radial-gradient(#eee, #6da9f7);
+$flame-bg: #fcc56c;
+$star-bg: orange;
+
+// ================= RESET =================
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+%center {
+  display: grid;
+  place-items: center;
+}
+
+// ================= LAYOUT =================
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; // 🚫 quita scroll
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #eee, transparent);
+}
+
+.wrapper {
+  position: relative;
+  display: grid;
+  place-items: center;
+  transform-origin: center center;
+}
+
+.greeting {
+  font-family: 'Cookie', cursive;
+  font-size: 4rem;
+  color: #444;
+  transform: scale(0);
+}
+
+.message {
+  font-family: 'Cookie', cursive;
+  font-size: 2.5rem;
+  color: #777;
+}
+
+// ================= PASTEL =================
+.plate {
+  position: relative;
+  width: $plate-width;
+  height: $plate-height;
+  background: #f1f1f1;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px 0px #aaa;
+  @extend %center;
+}
+
+.cake-wrap {
+  position: absolute;
+  bottom: 50%;
+}
+
+.cake-base {
+  position: relative;
+  width: $base-width;
+  height: $base-height;
+  background: $base-bg;
+
+  .base-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      height: $plate-height - $plate-padding;
+      transform: translateY(-50%);
+      background: inherit;
+      border-radius: 50%;
+    }
+  }
+
+  .base-top {
+    position: absolute;
+    width: 100%;
+    height: $base-top-height;
+    top: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: inherit;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      clip-path: polygon(0 0, 0% 50%, 100% 50%, 100% 0);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border-bottom-color: black;
+      clip-path: polygon(0 50%, 60% 50%, 60% 101%, 0 101%);
+    }
+  }
+}
+
+.cake-topping {
+  position: absolute;
+  bottom: 0%;
+  width: $base-width;
+  height: $base-height * 2;
+  z-index: 99;
+
+  .topping-front {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, $cream-bg 40%, transparent);
+
+    .top-layer {
+      height: 30%;
+      background: $cream-bg;
+    }
+
+    .bottom-layer {
+      position: relative;
+      height: 70%;
+      background: $cream-bg;
+      clip-path: url('#my-clip-path');
+    }
+  }
+
+  .topping-top {
+    background: $cream-bg;
+    position: absolute;
+    width: 100%;
+    height: $base-top-height;
+    top: 0;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 9;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      clip-path: polygon(0 0, 0% 50%, 100% 50%, 100% 0);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: inset 0 -1px 1px 2px rgba(200,169,195, 0.5);
+      clip-path: polygon(10% 50%, 70% 50%, 70% 101%, 10% 101%);
+    }
+  }
+}
+
+// ================= VELAS =================
+.candle-container {
+  width: $base-width;
+  position: absolute;
+  bottom: 60%;
+  z-index: 9999;
+  @extend %center;
+  opacity: 0;
+
+  .candle-wrap {
+    position: relative;
+    width: $candle-width;
+  }
+
+  .flame-wrap {
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    background: $flame-bg;
+    height: $flame-height;
+    transform-origin: bottom center;
+    transform: scale(0);
+    clip-path: url(#my-flame-path);
+  }
+
+  .candle-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 8px;
+    border-radius: 50%;
+    z-index: 9;
+    background: $candle-top-bg;
+  }
+
+  .candle-base {
+    position: relative;
+    width: 100%;
+    height: $candle-height;
+    margin: 2px 0;
+    background: $candle-bg;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #eee;
+      transform: translateY(50%);
+      height: 5px;
+      width: 100%;
+      z-index: -1;
+      border-radius: 50%;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      height: 10px;
+      width: 200%;
+      border-radius: 50%;
+      background: radial-gradient(#9e7199, $cream-bg);
+      z-index: -2;
+    }
+  }
+
+  .star {
+    width: $star-size;
+    height: $star-size;
+    position: absolute;
+    background-color: $star-bg;
+    clip-path: url(#my-star-path);
+    opacity: 0;
+
+    &:nth-of-type(1) { top: -20%; left: 30%; }
+    &:nth-of-type(2) { top: 30%; left: 10%; }
+    &:nth-of-type(3) { top: -10%; left: 85%; }
+    &:nth-of-type(4) { top: 35%; left: 65%; }
+    &:nth-of-type(5) { top: 55%; left: 90%; }
+  }
+}
+
+// ================= RESPONSIVE =================
+@media (max-width: 800px) {
+  .wrapper { transform: scale(0.9); }
+}
+@media (max-width: 600px) {
+  .wrapper { transform: scale(0.75); }
+}
+@media (max-width: 400px) {
+  .wrapper { transform: scale(0.6); }
+}
