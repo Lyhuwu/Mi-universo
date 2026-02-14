@@ -122,29 +122,29 @@ createIcyPlanet(1.5, -20, -60, 40);
 createRingedPlanet(4, 50, -50, -20);
 createIcyPlanet(2.5, 0, 70, -50);
 
-// --- CONSTELACIÓN SOFI ---
+// --- CONSTELACIÓN SOFI (TUS DATOS) ---
 const sofPoints = [
     // S
     { pos: [-16, 6, 0], text: "Nuestra primera vez juntitas❤️", img: "fotos/foto1.jpg", secondary: "" },
-    { pos: [-19, 3, 0], text: "Esta canción me recuerda a ti", img: "", secondary: "fotos/monky_dance.gif", link: "https://spotify.com" },
+    { pos: [-19, 3, 0], text: "Todas las veces que sujetas mi mano<3", img: "fotos/tu_tacto.jpg", secondary: "", link: "" },
     { pos: [-16, 0, 0], text: "Nuestro mesesito conviviendo juntas, día y noche, 24/7", img: "fotos/foto2.jpg", secondary: "" },
     { pos: [-13, -3, 0], text: "Tu carita tan preciosa ayayaya", img: "fotos/foto3.jpg", secondary: "" },
     { pos: [-16, -6, 0], text: "Cocinar juntitas", img: "fotos/foto4.jpg", secondary: "" },
     // O
-    { pos: [-8, 4, 0], text: "Mi estrella con un don tan precioso", img: "fotos/foto5.jpg", secondary: "" },
-    { pos: [-3, 4, 0], text: "Canción que me recuerda mucho a ti", img: "", secondary: "", link: "https://youtube.com" },
+    { pos: [-8, 4, 0], text: "Mi estrellita preciosa con un don tan precioso", img: "fotos/foto5.jpg", secondary: "" },
+    { pos: [-3, 4, 0], text: "Tus cálidos abachitos mi amor", img: "fotos/tus_abachitos.jpg", secondary: "", link: "" },
     { pos: [-3, -4, 0], text: "Jugar nuestros juegos preferidos", img: "fotos/foto6.jpg", secondary: "" },
-    { pos: [-8, -4, 0], text: "Tú y yo, por siempre", img: "fotos/foto7.jpg", secondary: "" },
+    { pos: [-8, -4, 0], text: "Compartir algo para sentir que estas conmigo", img: "fotos/foto7.jpg", secondary: "" },
     { pos: [-8, 4, 0], text: "" },
     // F
-    { pos: [2, 6, 0], text: "Felicidad es estar contigo", img: "fotos/foto8.jpg", secondary: "" },
-    { pos: [2, -6, 0], text: "Pasar tiempo y compartir mis días favoritos contigo", img: "fotos/foto9.jpe", secondary: "" },
-    { pos: [2, 0, 0], text: "Canciones que me recuerdan a ti", img: "", secondary: "fotos/pinwi_love.gif", link: "https://spotify.com" },
-    { pos: [7, 0, 0], text: "Verte ser tu misma", img: "fotos/foto10.jpe", secondary: "" },
+    { pos: [2, 6, 0], text: "Estar contigo, de las cosas que mas amo en la vida", img: "fotos/foto8.jpg", secondary: "" },
+    { pos: [2, -6, 0], text: "Pasar tiempo y compartir mis días favoritos contigo", img: "fotos/foto9.jpg", secondary: "" },
+    { pos: [2, 0, 0], text: "Canciones que me recuerdan a ti", img: "", secondary: "fotos/cancioness.gif", link: "" },
+    { pos: [7, 0, 0], text: "Verte ser tu misma", img: "fotos/foto10.jpg", secondary: "" },
     // I
-    { pos: [12, 4, 0], text: "Sentirme amada sin excepciones", img: "fotos/foto11.jpe", secondary: "" },
-    { pos: [12, -6, 0], text: "Cualquier cosa me recuerda a ti", img: "fotos/foto12.jpe", secondary: "" },
-    { pos: [12, 7, 0], text: "Tu existencia alegra mi corazón", img: "fotos/foto13.jpe", secondary: "" }
+    { pos: [12, 4, 0], text: "La felicidad de ser nosotras mismas sin miedo", img: "fotos/foto11.jpg", secondary: "" },
+    { pos: [12, -6, 0], text: "Cualquier cosa me recuerda a ti", img: "fotos/foto12.jpg", secondary: "" },
+    { pos: [12, 7, 0], text: "Tu existencia alegra mi corazón y mi alma", img: "fotos/sentirme_amada.jpg", secondary: "" }
 ];
 
 const visualObjects = []; 
